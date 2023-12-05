@@ -1,11 +1,11 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import AddProduct from '../components/AddProduct';
-import EditProduct from '../components/EditProduct';
-import Login from '../components/Login';
-import ProductList from '../components/ProductList';
-import Register from '../components/Register';
-import RegisterSuccess from '../components/RegisterSuccess';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Register from "../components/auth/Register";
+import Login from "../components/auth/Login";
+import RegisterSuccess from "../components/auth/RegisterSuccess";
+import AddProduct from "../components/product/AddProduct";
+import ProductList from "../components/product/ProductList";
+import EditProduct from "../components/product/EditProduct";
 
 const MainRoutes = () => {
   return (

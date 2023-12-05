@@ -1,10 +1,10 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { API } from '../../helpers/consts';
-import { getConfig } from '../../helpers/functions';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import { API } from "../../helpers/consts";
+import { getConfig } from "../../helpers/functions";
 
 export const getProducts = createAsyncThunk(
-  'products/getProducts',
+  "products/getProducts",
   async () => {
     try {
       const result = await axios.get(
@@ -19,7 +19,7 @@ export const getProducts = createAsyncThunk(
 );
 
 export const getCategories = createAsyncThunk(
-  'products/getCategories',
+  "products/getCategories",
   async () => {
     try {
       const result = await axios.get(`${API}/category/list/`, getConfig());
@@ -31,7 +31,7 @@ export const getCategories = createAsyncThunk(
 );
 
 export const createProduct = createAsyncThunk(
-  'products/createProduct',
+  "products/createProduct",
   async (newProduct) => {
     try {
       await axios.post(`${API}/products/`, newProduct, getConfig());
@@ -42,7 +42,7 @@ export const createProduct = createAsyncThunk(
 );
 
 export const deleteProduct = createAsyncThunk(
-  'products/deleteProduct',
+  "products/deleteProduct",
   async (id, thunkAPI) => {
     try {
       await axios.delete(`${API}/products/${id}/`, getConfig());
@@ -54,7 +54,7 @@ export const deleteProduct = createAsyncThunk(
 );
 
 export const getOneProduct = createAsyncThunk(
-  'products/getOneProduct',
+  "products/getOneProduct",
   async (id) => {
     try {
       const result = await axios.get(`${API}/products/${id}/`, getConfig());
@@ -67,11 +67,11 @@ export const getOneProduct = createAsyncThunk(
 );
 
 export const updateProduct = createAsyncThunk(
-  'products/updateProduct',
+  "products/updateProduct",
   async (editedProduct) => {
     try {
       await axios.patch(
-        `${API}/products/${editedProduct.get('id')}/`,
+        `${API}/products/${editedProduct.get("id")}/`,
         editedProduct,
         getConfig()
       );

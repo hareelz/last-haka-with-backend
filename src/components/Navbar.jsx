@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
-import { DropdownDivider } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { checkAuth, logout } from '../store/actions/authActions';
-import { setCurrentUser } from '../store/slices/authSlice';
+import { useEffect } from "react";
+import { ButtonGroup, DropdownDivider } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { checkAuth, logout } from "../store/actions/authActions";
+import { setCurrentUser } from "../store/slices/authSlice";
 
 function NavScrollExample() {
   const { currentUser } = useSelector((state) => state.auth);
@@ -17,7 +17,7 @@ function NavScrollExample() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (localStorage.getItem('tokens')) {
+    if (localStorage.getItem("tokens")) {
       dispatch(checkAuth());
     }
   }, []);
@@ -25,54 +25,121 @@ function NavScrollExample() {
   const handleLogout = () => {
     logout();
     dispatch(setCurrentUser());
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <a href="/">
+            <img
+              style={{
+                width: "10em",
+              }}
+              src="https://ww2.freelogovectors.net/wp-content/uploads/2019/03/freelancerlogo.png"
+              alt=""
+            />
+          </a>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
+            style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
+            <Nav.Link
+              style={{
+                fontWeight: "700",
+                fontSize: "1.2em",
+                marginLeft: "5em",
+              }}
+              onClick={() => navigate("/")}
+            >
+              Посты
+            </Nav.Link>
 
-            <NavDropdown title="Auth" id="navbarScrollingDropdown">
-              <NavDropdown.Item onClick={() => navigate('/register')}>
-                Register
+            <NavDropdown
+              style={{
+                fontWeight: "600",
+                fontSize: "1.2em",
+                marginLeft: "2em",
+              }}
+              title="Войти"
+              id="navbarScrollingDropdown"
+            >
+              <NavDropdown.Item
+                style={{ fontWeight: "500" }}
+                onClick={() => navigate("/register")}
+              >
+                Customer
               </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate('/login')}>
-                Login
+              <NavDropdown.Item
+                style={{ fontWeight: "500" }}
+                onClick={() => navigate("/login")}
+              >
+                Freelancer
               </NavDropdown.Item>
               <DropdownDivider />
-              <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+              <NavDropdown.Item
+                style={{ fontWeight: "500" }}
+                onClick={handleLogout}
+              >
+                Выйти
+              </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Product" id="navbarScrollingDropdown">
-              <NavDropdown.Item onClick={() => navigate('/products')}>
-                Products
+            <NavDropdown
+              style={{
+                fontWeight: "600",
+                fontSize: "1.2em",
+                marginLeft: "2em",
+              }}
+              title="Опубликовать+"
+              id="navbarScrollingDropdown"
+            >
+              <NavDropdown.Item
+                style={{ fontWeight: "500" }}
+                onClick={() => navigate("/products")}
+              >
+                Product
               </NavDropdown.Item>
 
               <DropdownDivider />
-              <NavDropdown.Item onClick={() => navigate('/add')}>
+              <NavDropdown.Item
+                style={{ fontWeight: "500" }}
+                onClick={() => navigate("/add")}
+              >
                 Add Product
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#" disabled>
-              {currentUser ? currentUser : 'No auth user'}
+              <svg
+                style={{ marginLeft: "4em" }}
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="30"
+                fill="currentColor"
+                class="bi bi-person-circle"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path
+                  fill-rule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+                />
+              </svg>
+              {currentUser ? currentUser : "Не авторизован"}
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Поиск..."
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success">Найти</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

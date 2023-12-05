@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Pagination } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Pagination } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
 const PaginationList = () => {
   const { pages } = useSelector((state) => state.product);
