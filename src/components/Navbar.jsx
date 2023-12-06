@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { checkAuth, logout } from "../store/actions/authActions";
 import { setCurrentUser } from "../store/slices/authSlice";
+import "../index.css";
 
 function NavScrollExample() {
   const { currentUser } = useSelector((state) => state.auth);
@@ -31,7 +32,7 @@ function NavScrollExample() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <a href="/">
             <img
               style={{
@@ -55,7 +56,7 @@ function NavScrollExample() {
                 fontSize: "1.2em",
                 marginLeft: "5em",
               }}
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/posts")}
             >
               Посты
             </Nav.Link>
@@ -115,10 +116,15 @@ function NavScrollExample() {
             </NavDropdown>
             <Nav.Link href="#" disabled>
               <svg
-                style={{ marginLeft: "4em" }}
+                style={{
+                  marginLeft: "4em",
+                  background: "#1d1c1c",
+                  borderRadius: "50%",
+                  border: "1px solid gray",
+                }}
                 xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="30"
+                width="35"
+                height="35"
                 fill="currentColor"
                 class="bi bi-person-circle"
                 viewBox="0 0 16 16"
@@ -129,7 +135,17 @@ function NavScrollExample() {
                   d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
                 />
               </svg>
-              {currentUser ? currentUser : "Не авторизован"}
+              <div
+                style={{
+                  position: "absolute",
+                  color: "#1d1c1c",
+                  top: "1.5em",
+                  left: "54em",
+                  fontWeight: "600",
+                }}
+              >
+                {currentUser ? currentUser : "Не авторизован"}
+              </div>
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
@@ -139,7 +155,9 @@ function NavScrollExample() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Найти</Button>
+            <Button variant="outline-success" className="my-button">
+              Найти
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

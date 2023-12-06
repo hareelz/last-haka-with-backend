@@ -3,3 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.my-button {
+  font-weight: 600 !important;
+  color: #1d1c1c !important;
+  border-color: #1d1c1c !important;
+}
+
+.my-button:hover {
+  background-color: #1d1c1c !important;
+  color: #fff !important;
+}
