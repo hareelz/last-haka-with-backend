@@ -33,14 +33,13 @@ export const getCategories = createAsyncThunk(
   "authFreeLancer/getCategories",
   async () => {
     try {
-      const result = await axios.get(`${API}/v1/category/`, getConfig());
+      const result = await axios.get(`${API}/v1/category/`);
       return result.data;
     } catch (error) {
       throw error;
     }
   }
 );
-console.log(getCategories());
 
 export const logoutFreeLance = () => {
   localStorage.removeItem("tokensFree");

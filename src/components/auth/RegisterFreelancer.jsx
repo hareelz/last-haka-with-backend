@@ -48,8 +48,8 @@ const RegisterFreelancer = () => {
         last_name: lastName,
         phone_number: phone,
         what_i_can: can,
-        city,
-        category,
+        city: city,
+        category: category,
       };
       dispatch(registerFreelance(newUser)).then(() =>
         navigate("/register-success")
