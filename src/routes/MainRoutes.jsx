@@ -6,20 +6,17 @@ import RegisterSuccess from "../components/auth/RegisterSuccess";
 import AddProduct from "../components/product/AddProduct";
 import ProductList from "../components/product/ProductList";
 import EditProduct from "../components/product/EditProduct";
+import RegisterFreelancer from "../components/auth/RegisterFreelancer";
+import LoginFreelancer from "../components/auth/LoginFreelancer";
 
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<h1>HOME PAGE</h1>} />
       <Route path="/register" element={<Register />} />
+      <Route path="/register-freelancer" element={<RegisterFreelancer />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/login-freelancer" element={<LoginFreelancer />} />
       <Route path="/register-success" element={<RegisterSuccess />} />
-
-      <Route path="/add" element={<AddProduct />} />
-      <Route path="/products" element={<ProductList />} />
-      <Route path="/edit/:id" element={<EditProduct />} />
-
-      <Route path="*" element={<h1>NOT FOUND PAGE</h1>} />
     </Routes>
   );
 };

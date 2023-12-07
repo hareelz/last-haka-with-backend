@@ -26,7 +26,7 @@ const Login = () => {
 
   return (
     <Container>
-      <h2>Login Page</h2>
+      <h2>Login Page Customer</h2>
       <FormControl
         onChange={(e) => setEmail(e.target.value)}
         placeholder="email"

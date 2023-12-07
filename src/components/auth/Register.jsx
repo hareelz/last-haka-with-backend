@@ -16,7 +16,14 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleRegister = () => {
-    if (!email.trim() || !password.trim() || !passwordConfirm.trim()) {
+    if (
+      !email.trim() ||
+      !password.trim() ||
+      !passwordConfirm.trim() ||
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !phone.trim()
+    ) {
       alert("заполните все поля");
     } else {
       const newUser = {
@@ -33,7 +40,7 @@ const Register = () => {
 
   return (
     <Container>
-      <h2>Register Page</h2>
+      <h2>Register Page Customer</h2>
       <FormControl
         onChange={(e) => setEmail(e.target.value)}
         placeholder="email"
@@ -48,6 +55,21 @@ const Register = () => {
         onChange={(e) => setPasswordConfirm(e.target.value)}
         placeholder="confirm password"
         type="password"
+      />
+      <FormControl
+        onChange={(e) => setFirstName(e.target.value)}
+        placeholder="Frist Name"
+        type="text"
+      />
+      <FormControl
+        onChange={(e) => setLastName(e.target.value)}
+        placeholder="Last Name"
+        type="text"
+      />
+      <FormControl
+        onChange={(e) => setPhone(e.target.value)}
+        placeholder="Phone Number"
+        type="number"
       />
       <Button onClick={handleRegister}>Register</Button>
     </Container>

@@ -32,15 +32,13 @@ function NavScrollExample() {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
         <Navbar.Brand href="#">
-          <a href="/">
-            <img
-              style={{
-                width: "10em",
-              }}
-              src="https://ww2.freelogovectors.net/wp-content/uploads/2019/03/freelancerlogo.png"
-              alt=""
-            />
-          </a>
+          <img
+            style={{
+              width: "10em",
+            }}
+            src="https://ww2.freelogovectors.net/wp-content/uploads/2019/03/freelancerlogo.png"
+            alt=""
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -59,14 +57,22 @@ function NavScrollExample() {
             >
               Посты
             </Nav.Link>
-
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Поиск..."
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="outline-success">Найти</Button>
+            </Form>
             <NavDropdown
               style={{
                 fontWeight: "600",
                 fontSize: "1.2em",
                 marginLeft: "2em",
               }}
-              title="Войти"
+              title="Sign Up"
               id="navbarScrollingDropdown"
             >
               <NavDropdown.Item
@@ -77,7 +83,7 @@ function NavScrollExample() {
               </NavDropdown.Item>
               <NavDropdown.Item
                 style={{ fontWeight: "500" }}
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/register-freelancer")}
               >
                 Freelancer
               </NavDropdown.Item>
@@ -95,24 +101,30 @@ function NavScrollExample() {
                 fontSize: "1.2em",
                 marginLeft: "2em",
               }}
-              title="Опубликовать+"
+              title="Log In"
               id="navbarScrollingDropdown"
             >
               <NavDropdown.Item
                 style={{ fontWeight: "500" }}
-                onClick={() => navigate("/products")}
+                onClick={() => navigate("/login")}
               >
-                Product
+                Customer
               </NavDropdown.Item>
-
+              <NavDropdown.Item
+                style={{ fontWeight: "500" }}
+                onClick={() => navigate("/login-freelancer")}
+              >
+                Freelancer
+              </NavDropdown.Item>
               <DropdownDivider />
               <NavDropdown.Item
                 style={{ fontWeight: "500" }}
-                onClick={() => navigate("/add")}
+                onClick={handleLogout}
               >
-                Add Product
+                Выйти
               </NavDropdown.Item>
             </NavDropdown>
+
             <Nav.Link href="#" disabled>
               <svg
                 style={{ marginLeft: "4em" }}
@@ -120,27 +132,18 @@ function NavScrollExample() {
                 width="40"
                 height="30"
                 fill="currentColor"
-                class="bi bi-person-circle"
+                className="bi bi-person-circle"
                 viewBox="0 0 16 16"
               >
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
                 />
               </svg>
               {currentUser ? currentUser : "Не авторизован"}
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Поиск..."
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Найти</Button>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
