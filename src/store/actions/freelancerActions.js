@@ -10,6 +10,7 @@ export const getFreelancer = createAsyncThunk(
       const result = await axios.get(
         `${API}/v1/freelancer/` + window.location.search
       );
+      console.log(result.data.results);
       return result.data;
     } catch (error) {
       throw error;
