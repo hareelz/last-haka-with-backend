@@ -9,7 +9,7 @@ const Footer = () => {
           width: "100%",
           height: "20em",
           background: "#000",
-          top: "216.5em",
+          top: "220.8em",
         }}
         class="page-footer font-small cyan darken-3"
       >

@@ -35,6 +35,7 @@ function NavScrollExample() {
         <Navbar.Brand href="/">
           <a href="/">
             <img
+              className="nav-logo"
               style={{
                 width: "10em",
               }}
@@ -43,14 +44,18 @@ function NavScrollExample() {
             />
           </a>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Toggle className="menu__burger" aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
+            style={{
+              maxHeight: "180px",
+              background: `url("https://i.pinimg.com/736x/fa/00/e0/fa00e080f08e4e0184811e0ff84e813c.jpg")`,
+            }}
             navbarScroll
           >
             <Nav.Link
+              className="nav-item"
               style={{
                 fontWeight: "700",
                 fontSize: "1.2em",
@@ -126,7 +131,7 @@ function NavScrollExample() {
                 width="35"
                 height="35"
                 fill="currentColor"
-                class="bi bi-person-circle"
+                class="ava-user"
                 viewBox="0 0 16 16"
               >
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
@@ -143,8 +148,9 @@ function NavScrollExample() {
                   left: "54em",
                   fontWeight: "600",
                 }}
+                className="user-name"
               >
-                {currentUser ? currentUser : "Не авторизован"}
+                {currentUser ? currentUser : "No auth"}
               </div>
             </Nav.Link>
           </Nav>
