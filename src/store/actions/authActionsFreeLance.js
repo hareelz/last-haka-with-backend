@@ -1,10 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API } from "../../helpers/consts";
-import { getConfig } from "../../helpers/functions";
 
 export const registerFreelance = createAsyncThunk(
-  "authFreelancer/registerFreeLance",
+  "authFreelancer/register",
   async (newUser) => {
     try {
       await axios.post(`${API}/v1/freelancer/register/`, newUser);
@@ -19,9 +18,8 @@ export const loginFreeLance = createAsyncThunk(
   async (userData) => {
     try {
       const result = await axios.post(`${API}/v1/freelancer/login/`, userData);
-      localStorage.setItem("tokensFree", JSON.stringify(result.data));
-      localStorage.setItem("emailFree", userData.email);
-      console.log(result);
+      localStorage.setItem("tokens", JSON.stringify(result.data));
+      localStorage.setItem("email", userData.email);
       return userData.email;
     } catch (error) {
       throw error;
@@ -42,15 +40,15 @@ export const getCategories = createAsyncThunk(
 );
 
 export const logoutFreeLance = () => {
-  localStorage.removeItem("tokensFree");
-  localStorage.removeItem("emailFree");
+  localStorage.removeItem("tokens");
+  localStorage.removeItem("email");
 };
 
 export const checkAuthFreeLance = createAsyncThunk(
   "authFreelancer/checkAuth",
   async () => {
     try {
-      const tokens = JSON.parse(localStorage.getItem("tokensFree"));
+      const tokens = JSON.parse(localStorage.getItem("tokens"));
 
       const Authorization = `Bearer ${tokens.access}`;
 
@@ -69,7 +67,7 @@ export const checkAuthFreeLance = createAsyncThunk(
       );
 
       localStorage.setItem(
-        "tokensFree",
+        "tokens",
         JSON.stringify({
           access: result.data.access,
           refresh: tokens.refresh,

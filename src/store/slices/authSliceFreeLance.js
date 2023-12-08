@@ -7,7 +7,7 @@ import {
 } from "../actions/authActionsFreeLance";
 
 const initialState = {
-  currentUser: localStorage.getItem("emailFree"),
+  currentUserFree: localStorage.getItem("email"),
   error: null,
   categories: [],
   loading: false,
@@ -18,7 +18,7 @@ export const authSliceFreeLance = createSlice({
   initialState,
   reducers: {
     setCurrentUserFree: (state) => {
-      state.currentUser = null;
+      state.currentUserFree = null;
     },
   },
   extraReducers: {
@@ -60,5 +60,5 @@ export const authSliceFreeLance = createSlice({
   },
 });
 
-export const { setCurrentUser } = authSliceFreeLance.actions;
+export const { setCurrentUserFree } = authSliceFreeLance.actions;
 export const authReducerFree = authSliceFreeLance.reducer;

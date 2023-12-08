@@ -18,6 +18,8 @@ const RegisterFreelancer = () => {
   const [can, setCan] = useState("");
   const [city, setCity] = useState("");
   const [category, setCategory] = useState("");
+  const [profession, setProfession] = useState("");
+  const [avatar, setAvatar] = useState();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -40,7 +42,7 @@ const RegisterFreelancer = () => {
     ) {
       alert("заполните все поля");
     } else {
-      const newUser = {
+      const newUserFree = {
         email,
         password,
         password_confirm: passwordConfirm,
@@ -50,8 +52,10 @@ const RegisterFreelancer = () => {
         what_i_can: can,
         city: city,
         category: category,
+        profession,
+        avatar,
       };
-      dispatch(registerFreelance(newUser)).then(() =>
+      dispatch(registerFreelance(newUserFree)).then(() =>
         navigate("/register-success")
       );
     }
@@ -100,6 +104,16 @@ const RegisterFreelancer = () => {
         placeholder="city"
         type="text"
       />
+      <FormControl
+        onChange={(e) => setProfession(e.target.value)}
+        placeholder="profession"
+        type="text"
+      />
+      <FormControl
+        onChange={(e) => setAvatar(e.target.value)}
+        placeholder="avatar"
+        type="file"
+      />
       <FormSelect
         value={category}
         onChange={(e) => setCategory(e.target.value)}
@@ -108,7 +122,9 @@ const RegisterFreelancer = () => {
           category
         </option>
         {categories.map((item) => (
-          <option value={item.id}>{item.name}</option>
+          <option key={item.slug} value={item.slug}>
+            {item.name}
+          </option>
         ))}
       </FormSelect>
 

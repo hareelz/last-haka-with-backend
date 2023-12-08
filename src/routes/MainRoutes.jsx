@@ -3,9 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Register from "../components/auth/Register";
 import Login from "../components/auth/Login";
 import RegisterSuccess from "../components/auth/RegisterSuccess";
-import AddProduct from "../components/product/AddProduct";
-import ProductList from "../components/product/ProductList";
-import EditProduct from "../components/product/EditProduct";
 import RegisterFreelancer from "../components/auth/RegisterFreelancer";
 import LoginFreelancer from "../components/auth/LoginFreelancer";
 
