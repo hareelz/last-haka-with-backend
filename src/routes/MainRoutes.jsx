@@ -5,6 +5,7 @@ import Login from "../components/auth/Login";
 import RegisterSuccess from "../components/auth/RegisterSuccess";
 import RegisterFreelancer from "../components/auth/RegisterFreelancer";
 import LoginFreelancer from "../components/auth/LoginFreelancer";
+import ProductList from "../components/product/ProductList";
 
 const MainRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const MainRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/login-freelancer" element={<LoginFreelancer />} />
       <Route path="/register-success" element={<RegisterSuccess />} />
+      <Route path="/posts" element={<ProductList />} />
     </Routes>
   );
 };

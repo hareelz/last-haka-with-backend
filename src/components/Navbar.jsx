@@ -13,7 +13,6 @@ import { setCurrentUser } from "../store/slices/authSlice";
 import { checkAuthFreeLance } from "../store/actions/authActionsFreeLance";
 
 function NavScrollExample() {
-  const { currentUser } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -55,7 +54,7 @@ function NavScrollExample() {
                 fontSize: "1.2em",
                 marginLeft: "5em",
               }}
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/posts")}
             >
               Посты
             </Nav.Link>

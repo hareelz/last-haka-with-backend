@@ -6,7 +6,7 @@ const initialState = {
   loading: false,
   error: null,
   categories: [],
-  productList: [],
+  freelancerList: [],
   oneProduct: null,
   pages: 1,
 };
@@ -18,7 +18,7 @@ export const freelancerSlice = createSlice({
   extraReducers: {
     [getFreelancer.fulfilled]: (state, action) => {
       state.loading = false;
-      state.productList = action.payload.results;
+      state.freelancerList = action.payload.results;
       state.pages = Math.ceil(action.payload.count / 6);
     },
     [getFreelancer.pending]: (state) => {

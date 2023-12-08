@@ -8,16 +8,15 @@ export const getFreelancer = createAsyncThunk(
   async () => {
     try {
       const result = await axios.get(
-        `${API}/v1/freelancer/` + window.location.search,
-        getConfig()
+        `${API}/v1/freelancer/` + window.location.search
       );
-      return result.data.results;
+      return result.data;
     } catch (error) {
       throw error;
     }
   }
 );
-
+getFreelancer();
 // export const createFreelancer = createAsyncThunk(
 //   "products/createFreelancer",
 //   async (newProduct) => {
