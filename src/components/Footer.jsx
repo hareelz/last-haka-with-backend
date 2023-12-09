@@ -11,13 +11,13 @@ const Footer = () => {
           background: "#000",
           top: "220.8em",
         }}
-        class="page-footer font-small cyan darken-3"
+        className="page-footer font-small cyan darken-3"
       >
-        <div class="footer_content"></div>
+        <div className="footer_content"></div>
 
         <div
           style={{ marginTop: "14em" }}
-          class="footer-copyright text-center py-3"
+          className="footer-copyright text-center py-3"
         >
           © 2020 Copyright:
           <a href="/"> Freelance.com</a>

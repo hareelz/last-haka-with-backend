@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
 const PaginationList = () => {
-  const { pages } = useSelector((state) => state.product);
+  const { pages } = useSelector((state) => state.freelancer);
 
   const [searchParams, setSearchParams] = useSearchParams();
 

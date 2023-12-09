@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (!email.trim() || !password.trim()) {
-      alert("заполните все поля");
+      alert("Заполните все поля!");
     } else {
       const newUser = {
         email,
@@ -26,15 +26,15 @@ const Login = () => {
 
   return (
     <Container>
-      <h2>Login Page</h2>
+      <h2>Login Page Customer</h2>
       <FormControl
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="email"
+        placeholder="Email"
         type="email"
       />
       <FormControl
         onChange={(e) => setPassword(e.target.value)}
-        placeholder="password"
+        placeholder="Password"
         type="password"
       />
 

@@ -5,6 +5,7 @@ const initialState = {
   currentUser: localStorage.getItem("email"),
   error: null,
   loading: false,
+  categories: [],
 };
 
 export const authSlice = createSlice({

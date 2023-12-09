@@ -11,15 +11,18 @@ import { useNavigate } from "react-router-dom";
 import { checkAuth, logout } from "../store/actions/authActions";
 import { setCurrentUser } from "../store/slices/authSlice";
 import "../index.css";
+import { checkAuthFreeLance } from "../store/actions/authActionsFreeLance";
 
 function NavScrollExample() {
   const { currentUser } = useSelector((state) => state.auth);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (localStorage.getItem("tokens")) {
       dispatch(checkAuth());
+      dispatch(checkAuthFreeLance());
     }
   }, []);
 
@@ -71,7 +74,7 @@ function NavScrollExample() {
                 fontSize: "1.2em",
                 marginLeft: "2em",
               }}
-              title="Войти"
+              title="Регистрация"
               id="navbarScrollingDropdown"
             >
               <NavDropdown.Item
@@ -82,7 +85,7 @@ function NavScrollExample() {
               </NavDropdown.Item>
               <NavDropdown.Item
                 style={{ fontWeight: "500" }}
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/register-freelancer")}
               >
                 Freelancer
               </NavDropdown.Item>
@@ -100,24 +103,30 @@ function NavScrollExample() {
                 fontSize: "1.2em",
                 marginLeft: "2em",
               }}
-              title="Опубликовать+"
+              title="Войти"
               id="navbarScrollingDropdown"
             >
               <NavDropdown.Item
                 style={{ fontWeight: "500" }}
-                onClick={() => navigate("/products")}
+                onClick={() => navigate("/login")}
               >
-                Product
+                Customer
               </NavDropdown.Item>
-
+              <NavDropdown.Item
+                style={{ fontWeight: "500" }}
+                onClick={() => navigate("/login-freelancer")}
+              >
+                Freelancer
+              </NavDropdown.Item>
               <DropdownDivider />
               <NavDropdown.Item
                 style={{ fontWeight: "500" }}
-                onClick={() => navigate("/add")}
+                onClick={handleLogout}
               >
-                Add Product
+                Выйти
               </NavDropdown.Item>
             </NavDropdown>
+
             <Nav.Link href="#" disabled>
               <svg
                 style={{
@@ -130,12 +139,12 @@ function NavScrollExample() {
                 width="35"
                 height="35"
                 fill="currentColor"
-                class="ava-user"
+                className="ava-user"
                 viewBox="0 0 16 16"
               >
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
                 />
               </svg>
@@ -144,7 +153,7 @@ function NavScrollExample() {
                   position: "absolute",
                   color: "#1d1c1c",
                   top: "1.5em",
-                  left: "54em",
+                  left: "52em",
                   fontWeight: "600",
                 }}
                 className="user-name"

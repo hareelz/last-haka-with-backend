@@ -2,17 +2,17 @@ import React, { useEffect } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import { getProducts } from "../../store/actions/productActions";
 import Pagination from "../Pagination";
 import ProductCard from "./ProductCard";
+import { getFreelancer } from "../../store/actions/freelancerActions";
 
 const ProductList = () => {
-  const { productList, loading } = useSelector((state) => state.product);
+  const { freelancerList, loading } = useSelector((state) => state.freelancer);
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getFreelancer());
   }, [searchParams]);
 
   return (
@@ -20,7 +20,7 @@ const ProductList = () => {
       {loading ? (
         <Spinner animation="border" variant="dark" />
       ) : (
-        productList.map((item) => <ProductCard item={item} key={item.id} />)
+        freelancerList.map((item) => <ProductCard item={item} key={item.id} />)
       )}
       <Container>
         <Pagination />
