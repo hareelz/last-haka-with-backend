@@ -47,10 +47,9 @@ function NavScrollExample() {
         <Navbar.Toggle className="menu__burger" aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="burger-menu_bg"
             style={{
               maxHeight: "180px",
-              background: `url("https://i.pinimg.com/736x/fa/00/e0/fa00e080f08e4e0184811e0ff84e813c.jpg")`,
             }}
             navbarScroll
           >
@@ -154,7 +153,7 @@ function NavScrollExample() {
               </div>
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          <Form className="inp-search">
             <Form.Control
               type="search"
               placeholder="Поиск..."

@@ -14,3 +14,8 @@
   background-color: #1d1c1c !important;
   color: #fff !important;
 }
+
+.inp-search {
+  display: flex;
+  margin-left: 6em;
+}
