@@ -6,6 +6,7 @@ import {
   getCategories,
   registerFreelance,
 } from "../../store/actions/authActionsFreeLance";
+import Footer from "../Footer";
 
 const RegisterFreelancer = () => {
   const { categories } = useSelector((state) => state.authFreeLancer);
@@ -62,74 +63,89 @@ const RegisterFreelancer = () => {
   };
 
   return (
-    <Container>
-      <h2>Register Page Freelancer</h2>
-      <FormControl
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        type="email"
-      />
-      <FormControl
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        type="password"
-      />
-      <FormControl
-        onChange={(e) => setPasswordConfirm(e.target.value)}
-        placeholder="Confirm Password"
-        type="password"
-      />
-      <FormControl
-        onChange={(e) => setFirstName(e.target.value)}
-        placeholder="First Name"
-        type="text"
-      />
-      <FormControl
-        onChange={(e) => setLastName(e.target.value)}
-        placeholder="Last Name"
-        type="text"
-      />
-      <FormControl
-        onChange={(e) => setPhone(e.target.value)}
-        placeholder="Phone Number"
-        type="number"
-      />
-      <FormControl
-        onChange={(e) => setCan(e.target.value)}
-        placeholder="What can you?"
-        type="text"
-      />
-      <FormControl
-        onChange={(e) => setCity(e.target.value)}
-        placeholder="City"
-        type="text"
-      />
-      <FormControl
-        onChange={(e) => setProfession(e.target.value)}
-        placeholder="Profession"
-        type="text"
-      />
-      <FormControl
-        onChange={(e) => setAvatar(e.target.value)}
-        placeholder="Avatar"
-        type="file"
-      />
-      <FormSelect
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-      >
-        <option disabled value="">
-          Category
-        </option>
-        {categories.map((item) => (
-          <option key={item.slug} value={item.slug}>
-            {item.name}
+    <div className="main-block-register">
+      <Container className="block-register-freelancer">
+        <h2>Register Page Freelancer</h2>
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          type="email"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          type="password"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setPasswordConfirm(e.target.value)}
+          placeholder="Confirm Password"
+          type="password"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setFirstName(e.target.value)}
+          placeholder="First Name"
+          type="text"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setLastName(e.target.value)}
+          placeholder="Last Name"
+          type="text"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="Phone Number"
+          type="number"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setCan(e.target.value)}
+          placeholder="What can you?"
+          type="text"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setCity(e.target.value)}
+          placeholder="City"
+          type="text"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setProfession(e.target.value)}
+          placeholder="Profession"
+          type="text"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setAvatar(e.target.value)}
+          placeholder="Avatar"
+          type="file"
+        />
+        <FormSelect
+          className="form-cont-login"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option disabled value="">
+            Category
           </option>
-        ))}
-      </FormSelect>
+          {categories.map((item) => (
+            <option key={item.slug} value={item.slug}>
+              {item.name}
+            </option>
+          ))}
+        </FormSelect>
 
-      <Button onClick={handleRegister}>Register</Button>
-    </Container>
+        <Button className="btn-register-cust" onClick={handleRegister}>
+          REGISTER
+        </Button>
+      </Container>
+    </div>
   );
 };
 

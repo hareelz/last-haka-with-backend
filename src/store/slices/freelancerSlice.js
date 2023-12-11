@@ -19,7 +19,7 @@ export const freelancerSlice = createSlice({
     [getFreelancer.fulfilled]: (state, action) => {
       state.loading = false;
       state.freelancerList = action.payload.results;
-      state.pages = Math.ceil(action.payload.count / 3);
+      state.pages = Math.ceil(action.payload.count / 1);
     },
     [getFreelancer.pending]: (state) => {
       state.loading = true;

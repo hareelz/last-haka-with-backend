@@ -93,10 +93,10 @@
 }
 
 .info_block__right-btn:hover {
-  background: linear-gradient(to bottom, #ffffff -10%, #000000 150%);
+  background: linear-gradient(to bottom, #ffffff -10%, #3a3a3a 150%);
 }
 .info_block__left-btn:hover {
-  background: linear-gradient(to bottom, #e60000 -10%, #000000 150%);
+  background: linear-gradient(to bottom, #e60000 -10%, #8b0000 150%);
 }
 /* !MAIN BLOCK END */
 

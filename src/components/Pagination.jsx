@@ -11,10 +11,13 @@ const PaginationList = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
+    console.log("Текущая страница:", currentPage);
+    console.log("Всего страниц:", pages);
+
     setSearchParams({
       page: currentPage,
     });
-  }, [currentPage]);
+  }, [currentPage, pages]);
 
   function getPagesCount() {
     const pageCountArr = [];
@@ -27,7 +30,7 @@ const PaginationList = () => {
   }
 
   return (
-    <Pagination>
+    <Pagination style={{ marginLeft: "23.5em" }}>
       <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} />
       {getPagesCount().map((item) =>
         item === currentPage ? (
