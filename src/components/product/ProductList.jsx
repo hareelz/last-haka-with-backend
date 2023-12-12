@@ -18,17 +18,18 @@ const ProductList = () => {
 
   return (
     <div className="card__body" style={{ display: "flex", flexWrap: "wrap" }}>
-      {loading ? (
-        <Spinner animation="border" variant="dark" />
-      ) : (
-        freelancerList.map((item) => <ProductCard item={item} key={item.id} />)
-      )}
       <Container>
         <Filter />
       </Container>
-      <Container>
-        <Pagination />
-      </Container>
+      {loading ? (
+        <Spinner
+          style={{ margin: "auto", marginTop: "15em" }}
+          animation="border"
+          variant="dark"
+        />
+      ) : (
+        freelancerList.map((item) => <ProductCard item={item} key={item.id} />)
+      )}
     </div>
   );
 };

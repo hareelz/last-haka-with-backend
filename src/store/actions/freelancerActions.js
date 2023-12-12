@@ -42,7 +42,7 @@ getFreelancer();
 // );
 
 export const getOneFreelancer = createAsyncThunk(
-  "products/getOneFreelancer",
+  "freelancer/getOneFreelancer",
   async (id) => {
     try {
       const result = await axios.get(
@@ -66,6 +66,18 @@ export const updateFreelancer = createAsyncThunk(
         editedProduct,
         getConfig()
       );
+    } catch (error) {
+      throw error;
+    }
+  }
+);
+
+export const getCategories = createAsyncThunk(
+  "authFreeLancer/getCategories",
+  async () => {
+    try {
+      const result = await axios.get(`${API}/v1/category/`);
+      return result.data;
     } catch (error) {
       throw error;
     }

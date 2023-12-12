@@ -16,19 +16,6 @@ const ProductCard = (props) => {
         <Card.Title className="card_title">{item.last_name}</Card.Title>
         <Card.Text className="card_subtitle">{item.first_name}</Card.Text>
         <Card.Text className="card_text">{item.what_i_can}</Card.Text>
-        {/* {item.is_author && (
-          <>
-            <Button
-              variant="primary"
-              onClick={() => dispatch(deleteProduct(item.id))}
-            >
-              Delete
-            </Button>
-            <Link to={`/edit/${item.id}`}>
-              <Button variant="primary">Edit</Button>
-            </Link>
-          </>
-        )} */}
       </Card.Body>
     </Card>
   );

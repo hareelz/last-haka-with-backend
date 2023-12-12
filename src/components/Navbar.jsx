@@ -40,7 +40,11 @@ function NavScrollExample(props) {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar
+      style={{ position: "relative", zIndex: "2" }}
+      expand="lg"
+      className="bg-body-tertiary"
+    >
       <Container fluid>
         <Navbar.Brand href="/">
           <a href="/">
@@ -139,7 +143,7 @@ function NavScrollExample(props) {
                 placement="bottom"
                 overlay={
                   <Tooltip color="black" id="button-tooltip-2">
-                    user name
+                    {currentUser ? currentUser : "no auth user"}
                   </Tooltip>
                 }
               >
