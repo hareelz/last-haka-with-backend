@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 const RegisterSuccess = () => {
   return (
-    <div>
-      <h2>Вы успешно зарегистрировались!</h2>
+
+    <div className="block-success">
+      <h2 className="title-success">Вы успешно зарегистрировались!</h2>
       <Link to="/login">
-        <Button style={{ textAlign: "center" }}>Войти</Button>
+        <Button className="btn-succcess">Войти</Button>
       </Link>
     </div>
   );

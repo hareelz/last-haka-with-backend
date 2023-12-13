@@ -1,25 +1,23 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import AddProduct from '../components/AddProduct';
-import EditProduct from '../components/EditProduct';
-import Login from '../components/Login';
-import ProductList from '../components/ProductList';
-import Register from '../components/Register';
-import RegisterSuccess from '../components/RegisterSuccess';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Register from "../components/auth/Register";
+import Login from "../components/auth/Login";
+import RegisterSuccess from "../components/auth/RegisterSuccess";
+import RegisterFreelancer from "../components/auth/RegisterFreelancer";
+import LoginFreelancer from "../components/auth/LoginFreelancer";
+import ProductList from "../components/product/ProductList";
+import Info from "../components/info/Info";
 
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<h1>HOME PAGE</h1>} />
+      <Route path="/" element={<Info />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/register-freelancer" element={<RegisterFreelancer />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/login-freelancer" element={<LoginFreelancer />} />
       <Route path="/register-success" element={<RegisterSuccess />} />
-
-      <Route path="/add" element={<AddProduct />} />
-      <Route path="/products" element={<ProductList />} />
-      <Route path="/edit/:id" element={<EditProduct />} />
-
-      <Route path="*" element={<h1>NOT FOUND PAGE</h1>} />
+      <Route path="/posts" element={<ProductList />} />
     </Routes>
   );
 };

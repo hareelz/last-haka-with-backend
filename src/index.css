@@ -2,4 +2,68 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+.my-button {
+  font-weight: 600 !important;
+  color: #1d1c1c !important;
+  border-color: #1d1c1c !important;
+  margin-left: 0.2em !important;
+}
+
+.my-button:hover {
+  background-color: #1d1c1c !important;
+  color: #fff !important;
+}
+
+.inp-search {
+  display: flex;
+  margin-left: 10em;
+}
+
+.form-cont-navbar {
+  border: 1px solid #1d1c1c !important;
+}
+
+.filter-content {
+  width: 100%;
+  margin-top: -3em;
+  padding: 0.5em;
+  border-radius: 1em 0 0 1em;
+  height: 100em;
+}
+
+.filter-content > h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-left: 0.1em;
+  margin-bottom: 1em;
+  margin-top: 2em;
+  color: #1d1c1c;
+}
+
+.block-filter {
+  position: fixed;
+  z-index: 1;
+  width: 23.5%;
+  margin-left: -22.55em;
+  margin-top: -5em;
+  border-right: 2px solid #1d1c1c;
+  background: url("https://st5.depositphotos.com/17620692/63337/v/450/depositphotos_633371220-stock-illustration-white-and-grey-background-space.jpg");
+  background-position: 5em -1em;
+}
+
+.filter-btns {
+  margin: 0.1em;
+  font-weight: 600 !important;
+  font-size: 0.9em !important;
+  border: 1px solid #1d1c1c !important;
+  background: #fff !important;
+  color: #1d1c1c !important;
+}
+
+.filter-btns:hover {
+  background: #1d1c1c !important;
+  color: #fff !important;
 }

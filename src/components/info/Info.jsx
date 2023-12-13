@@ -1,6 +1,8 @@
 import React from "react";
 import "../info/Info.css";
 
+import { Carousel } from "react-bootstrap";
+
 const Info = () => {
   return (
     <div>

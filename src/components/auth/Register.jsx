@@ -16,7 +16,15 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleRegister = () => {
-    if (!email.trim() || !password.trim() || !passwordConfirm.trim()) {
+
+    if (
+      !email.trim() ||
+      !password.trim() ||
+      !passwordConfirm.trim() ||
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !phone.trim()
+    ) {
       alert("заполните все поля");
     } else {
       const newUser = {
@@ -32,25 +40,51 @@ const Register = () => {
   };
 
   return (
-    <Container>
-      <h2>Register Page</h2>
-      <FormControl
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="email"
-        type="email"
-      />
-      <FormControl
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="password"
-        type="password"
-      />
-      <FormControl
-        onChange={(e) => setPasswordConfirm(e.target.value)}
-        placeholder="confirm password"
-        type="password"
-      />
-      <Button onClick={handleRegister}>Register</Button>
-    </Container>
+
+    <div className="main-block-register">
+      <Container className="block-register-customer">
+        <h2>Register Page Customer</h2>
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="email"
+          type="email"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="password"
+          type="password"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setPasswordConfirm(e.target.value)}
+          placeholder="confirm password"
+          type="password"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setFirstName(e.target.value)}
+          placeholder="Frist Name"
+          type="text"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setLastName(e.target.value)}
+          placeholder="Last Name"
+          type="text"
+        />
+        <FormControl
+          className="form-cont-login"
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="Phone Number"
+          type="number"
+        />
+        <Button className="btn-register-cust" onClick={handleRegister}>
+          REGISTER
+        </Button>
+      </Container>
+    </div>
   );
 };
 
