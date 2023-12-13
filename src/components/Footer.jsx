@@ -17,18 +17,11 @@ const Footer = () => {
         <div className="footer_content"></div>
 
         <div
-          style={{ marginTop: "14em" }}
+          style={{ top: "220.6em", marginTop: "14em" }}
           className="footer-copyright text-center py-3"
-
-          top: "220.6em",
-        }}
-        class="page-footer font-small cyan darken-3"
-      >
-        <div class="footer_content"></div>
-
-
+          class="page-footer font-small cyan darken-3"
         >
-          © 2020 Copyright:
+          <div class="footer_content"></div> © 2020 Copyright:
           <a href="/"> Freelance.com</a>
         </div>
       </footer>
