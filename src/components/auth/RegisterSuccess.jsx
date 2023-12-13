@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const RegisterSuccess = () => {
   return (
+
     <div className="block-success">
       <h2 className="title-success">Вы успешно зарегистрировались!</h2>
       <Link to="/login">

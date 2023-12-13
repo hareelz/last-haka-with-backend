@@ -9,6 +9,7 @@ const Footer = () => {
           width: "100%",
           height: "20em",
           background: "#000",
+
           top: "220.8em",
         }}
         className="page-footer font-small cyan darken-3"
@@ -18,6 +19,14 @@ const Footer = () => {
         <div
           style={{ marginTop: "14em" }}
           className="footer-copyright text-center py-3"
+
+          top: "220.6em",
+        }}
+        class="page-footer font-small cyan darken-3"
+      >
+        <div class="footer_content"></div>
+
+
         >
           © 2020 Copyright:
           <a href="/"> Freelance.com</a>

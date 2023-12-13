@@ -16,6 +16,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleRegister = () => {
+
     if (
       !email.trim() ||
       !password.trim() ||
@@ -39,6 +40,7 @@ const Register = () => {
   };
 
   return (
+
     <div className="main-block-register">
       <Container className="block-register-customer">
         <h2>Register Page Customer</h2>

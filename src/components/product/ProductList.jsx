@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,6 +32,7 @@ const ProductList = () => {
         )}
       </div>
       <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />
+
     </div>
   );
 };

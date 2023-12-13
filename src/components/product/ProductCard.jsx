@@ -2,14 +2,17 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+
 import { deleteProduct } from "../../store/actions/freelancerActions";
 import "./ProductCard.css";
+
 
 const ProductCard = (props) => {
   const { item } = props;
 
   const dispatch = useDispatch();
   return (
+
     <Card className="card_body">
       <Card.Img variant="top" src={item.image} />
       <Card.Body>
