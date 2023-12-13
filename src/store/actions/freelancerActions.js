@@ -83,3 +83,17 @@ export const getCategories = createAsyncThunk(
     }
   }
 );
+
+export const getFreelanceSearch = createAsyncThunk(
+  "freelancerList/getFreelanceSearch",
+  async () => {
+    try {
+      const result = await axios.get(
+        `${API}v1/freelancer/` + window.location.search
+      );
+      return result.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+);

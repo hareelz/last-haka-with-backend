@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
@@ -10,26 +10,27 @@ import Filter from "../Filter";
 const ProductList = () => {
   const { freelancerList, loading } = useSelector((state) => state.freelancer);
   const dispatch = useDispatch();
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  useEffect(() => {
-    dispatch(getFreelancer());
-  }, [searchParams]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   return (
-    <div className="card__body" style={{ display: "flex", flexWrap: "wrap" }}>
-      <Container>
-        <Filter />
-      </Container>
-      {loading ? (
-        <Spinner
-          style={{ margin: "auto", marginTop: "15em" }}
-          animation="border"
-          variant="dark"
-        />
-      ) : (
-        freelancerList.map((item) => <ProductCard item={item} key={item.id} />)
-      )}
+    <div>
+      <div className="card__body" style={{ display: "flex", flexWrap: "wrap" }}>
+        <Container>
+          <Filter />
+        </Container>
+        {loading ? (
+          <Spinner
+            style={{ margin: "auto", marginTop: "15em" }}
+            animation="border"
+            variant="dark"
+          />
+        ) : (
+          freelancerList.map((item) => (
+            <ProductCard item={item} key={item.id} />
+          ))
+        )}
+      </div>
+      <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>
   );
 };

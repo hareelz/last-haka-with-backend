@@ -7,6 +7,7 @@ import {
   getCategories,
   getCategoriesFree,
   getFreelancer,
+  getOneFreelancer,
 } from "../store/actions/freelancerActions";
 
 const Filter = () => {

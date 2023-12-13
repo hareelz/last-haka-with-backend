@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   ButtonGroup,
   DropdownDivider,
@@ -13,18 +13,37 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { checkAuth, logout } from "../store/actions/authActions";
 import { setCurrentUser } from "../store/slices/authSlice";
 import "../index.css";
-import { checkAuthFreeLance } from "../store/actions/authActionsFreeLance";
+import {
+  checkAuthFreeLance,
+  getCategories,
+} from "../store/actions/authActionsFreeLance";
+import { getFreelancer } from "../store/actions/freelancerActions";
 
 function NavScrollExample(props) {
+  const [searchParams, setSearchParams] = useSearchParams();
   const { currentUser } = useSelector((state) => state.auth);
-  const { item } = props;
-
-  const navigate = useNavigate();
+  const [source, setSource] = useState(searchParams.get("search") || "");
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getFreelancer());
+  }, [searchParams]);
+  const navigate = useNavigate();
+  const filterCategory = (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+
+    if (value === "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+
+    const url = `${window.location.pathname}?${search.toString()}`;
+    navigate(url);
+  };
 
   useEffect(() => {
     if (localStorage.getItem("tokens")) {
@@ -170,6 +189,8 @@ function NavScrollExample(props) {
               placeholder="Поиск..."
               className="form-cont-navbar"
               aria-label="Search"
+              value={source}
+              onChange={(e) => setSource(e.target.value)}
             />
             <Button variant="outline-success" className="my-button">
               Найти
