@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 import {
   getCategories,
   getOneProduct,
   getProducts,
-} from '../actions/productActions';
+} from "../actions/productActions";
 
 const initialState = {
   loading: false,
@@ -15,7 +15,7 @@ const initialState = {
 };
 
 export const productSlice = createSlice({
-  name: 'product',
+  name: "product",
   initialState,
   reducers: {},
   extraReducers: {
