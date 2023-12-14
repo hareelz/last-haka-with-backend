@@ -1,14 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { login, logout, register } from '../actions/authActions';
+import { createSlice } from "@reduxjs/toolkit";
+import { login, logout, register } from "../actions/authActions";
 
 const initialState = {
-  currentUser: localStorage.getItem('email'),
+  currentUser: localStorage.getItem("email"),
   error: null,
   loading: false,
+  categories: [],
 };
 
 export const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
     setCurrentUser: (state) => {

@@ -1,12 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authReducer } from "./slices/authSlice";
 import { productReducer } from "./slices/productSlice";
-import { freelancerReducer } from "./slices/freelancerSlice";
+import {
+  authReducerFree,
+  freelancerReducer,
+} from "./slices/authSliceFreeLance";
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    product: productReducer,
+    authFreeLancer: authReducerFree,
     freelancers: freelancerReducer,
+    freelancer: freelancerReducer,
+
+    product: productReducer,
   },
 });

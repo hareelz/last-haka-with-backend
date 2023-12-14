@@ -1,5 +1,5 @@
 export const getConfig = () => {
-  const tokens = JSON.parse(localStorage.getItem('tokens'));
+  const tokens = JSON.parse(localStorage.getItem("tokens"));
   const Authorization = `Bearer ${tokens.access}`;
 
   const config = {

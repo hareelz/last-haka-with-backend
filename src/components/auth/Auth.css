@@ -1,0 +1,122 @@
+/* ! SUCCESS PAGE STYLES */
+.btn-succcess {
+  width: 100%;
+  font-weight: 700 !important;
+  font-size: 1.3em !important;
+  letter-spacing: 0.1em;
+  background: #1d1c1c !important;
+  border: 1px solid #1d1c1c !important;
+}
+
+.btn-succcess:hover {
+  color: #1d1c1c !important;
+  background: #fff !important;
+}
+
+.title-success {
+  color: #1d1c1c;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.block-success {
+  margin: auto;
+  margin-top: 3em;
+  padding: 2em;
+  width: 40em;
+  height: 20em;
+  border: 1px solid #1d1c1c;
+  border-radius: 1em;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+/* ! SUCCESS PAGE STYLES */
+
+/* ! LOGIN PAGE STYLES */
+.login-cust {
+  width: 25em !important;
+  height: 23em;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  border-radius: 1em;
+  margin-top: 2em;
+  padding-top: 1em;
+  border: 1px solid #1d1c1c;
+}
+
+.container > h2 {
+  color: black;
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: 700;
+  margin-bottom: 2em;
+}
+
+.form-cont-login {
+  margin: 0.4em 0;
+  border: 1px solid #1d1c1c !important;
+}
+
+.btn-login-cust {
+  width: 100%;
+  margin-top: 3em;
+  font-size: 1.2em !important;
+  font-weight: 700 !important;
+  background-color: #fff !important;
+  color: #1d1c1c !important;
+  border: 1px solid #1d1c1c !important;
+}
+
+.btn-login-cust:hover {
+  background-color: #1d1c1c !important;
+  color: #fff !important;
+}
+
+/* ! LOGIN PAGE STYLES */
+
+/* ! REGISTER PAGE STYLES */
+.main-block-register {
+  width: 100%;
+}
+
+.block-register-freelancer {
+  width: 50% !important;
+  height: 45em;
+  border-radius: 1em;
+  border: 1px solid #1d1c1c;
+  margin-top: 2em;
+}
+
+.block-register-freelancer > h2 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.btn-register-cust {
+  width: 100%;
+
+  font-size: 1.2em !important;
+  font-weight: 700 !important;
+  background-color: #fff !important;
+  color: #1d1c1c !important;
+  border: 1px solid #1d1c1c !important;
+}
+.btn-register-cust:hover {
+  background-color: #1d1c1c !important;
+  color: #fff !important;
+}
+/* =========================================================== */
+
+.block-register-customer {
+  width: 50% !important;
+  height: 30em;
+  border-radius: 1em;
+  border: 1px solid #1d1c1c;
+  margin-top: 2em;
+}
+
+.block-register-customer > h2 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+/* ! REGISTER PAGE STYLES */

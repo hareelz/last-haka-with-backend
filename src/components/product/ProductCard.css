@@ -1,0 +1,33 @@
+.card_text::first-letter,
+.card_subtitle::first-letter,
+.card_title::first-letter {
+  text-transform: uppercase;
+}
+
+.card_text,
+.card_subtitle,
+.card_title {
+  font-weight: 600;
+}
+
+.card_text {
+  font-weight: 700;
+}
+
+.card_text,
+.card_subtitle {
+  color: black;
+}
+
+.card__body {
+  margin-left: 20em;
+  padding: 0 2em;
+  /* border-left: 2px solid #1d1c1c; */
+}
+
+.card_body {
+  background: url("https://st5.depositphotos.com/17620692/63337/v/450/depositphotos_633371220-stock-illustration-white-and-grey-background-space.jpg");
+  width: 19em;
+  margin: 0.5em;
+  margin-left: 3em;
+}

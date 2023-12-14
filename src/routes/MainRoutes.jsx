@@ -9,14 +9,15 @@ import RegisterSuccess from "../components/RegisterSuccess";
 import FreeLancerCard from "../components/FreeLancerCard";
 import FreeLancerList from "../components/FreeLancerList";
 import FreelancerDetail from "../components/FreelancerDetail";
-import Comments from "../components/Comments";
 
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<h1>HOME PAGE</h1>} />
+      <Route path="/" element={<Info />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/register-freelancer" element={<RegisterFreelancer />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/login-freelancer" element={<LoginFreelancer />} />
       <Route path="/register-success" element={<RegisterSuccess />} />
 
       <Route path="/add" element={<AddProduct />} />
@@ -25,7 +26,7 @@ const MainRoutes = () => {
       <Route path="/detail/:id" element={<FreelancerDetail />} />
       <Route path="/freelancer-card" element={<FreeLancerCard />} />
       <Route path="/freelancer-list" element={<FreeLancerList />} />
-      <Route path="/comments" element={<Comments />} />
+      <Route path="/posts" element={<ProductList />} />
 
       <Route path="*" element={<h1>NOT FOUND PAGE</h1>} />
     </Routes>
